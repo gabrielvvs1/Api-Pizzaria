@@ -22,7 +22,6 @@ from order_routes import order_router
 app.include_router(auth_router)
 app.include_router(order_router)
 
-#ADM vale1@gmail.com SENHA: 12345
-#user comum vale@gmail.com SENHA: 12345
+
 
 # para rodar o código, usar esse comando no terminal: uvicorn main:app --reload
