@@ -104,30 +104,7 @@ Todas as rotas abaixo usam o prefixo indicado. As rotas de pedidos exigem `Autho
 | GET | `/pedidos/listar/pedidos-usuario` | Lista pedidos do usuário autenticado |
 | GET | `/pedidos/listar` | Lista todos os pedidos; somente administrador |
 
-Os corpos e respostas detalhados estão disponíveis na documentação OpenAPI em `/docs`.
 
-## Autorização
 
-As rotas de pedidos exigem um token JWT válido. O usuário autenticado pode operar seus próprios pedidos; algumas operações permitem também administradores. O campo `admin` é recebido no cadastro conforme a implementação atual, portanto a criação de contas deve ser protegida e revisada antes de usar a API em produção.
 
-## Estrutura do projeto
-
-```text
-.
-├── alembic/             # Configuração e histórico de migrações
-├── auth_routes.py       # Cadastro e autenticação
-├── dependencies.py      # Sessão do banco e validação de token
-├── main.py              # Aplicação FastAPI e registro de rotas
-├── models.py            # Modelos SQLAlchemy
-├── order_routes.py      # Operações de pedidos
-├── schemas.py           # Schemas de entrada e saída
-├── requirements.txt     # Dependências Python
-└── .env.example         # Modelo de configuração sem credenciais
-```
-
-## Segurança
-
-- Não envie `.env`, tokens, chaves ou credenciais ao repositório.
-- Gere uma `SECRET_KEY` nova e forte para cada ambiente.
-- Não use dados ou credenciais reais de clientes em desenvolvimento.
 - Revise permissões de cadastro e configuração de usuários administradores antes de disponibilizar a API publicamente.
